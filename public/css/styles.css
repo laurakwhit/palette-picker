@@ -54,6 +54,39 @@ main {
   font-size: 150px;
 }
 
+.left-side__diamond h4 {
+  position: absolute;
+  margin: 0;
+  z-index: 1;
+  font-size: 25px;
+}
+
+.left-side__diamond img {
+  position: absolute;
+  z-index: 1;
+  width: 25px;
+}
+
+.top-left-triangle img {
+  top: 16.5rem;
+  left: 22%;
+}
+
+.top-left-triangle h4 {
+  top: 16.5rem;
+  left: 8%;
+}
+
+.top-center-triangle img {
+  top: 14.5rem;
+  left: 26.5%;
+}
+
+.top-center-triangle h4 {
+  top: 7rem;
+  left: 23.5%;
+}
+
 .project-gem__diamond {
 
 }
@@ -71,7 +104,7 @@ main {
   height: 0;
   border-right: 1em solid transparent;
   border-left: 1em  solid transparent;
-  border-bottom: 1.33em solid pink;
+  border-bottom: 1.33em solid transparent;
 }
 
 .top-center-triangle{
@@ -80,7 +113,7 @@ main {
   height: 0;
   border-right: 1em solid transparent;
   border-left: 1em solid transparent;
-  border-top: 1.33em solid pink;
+  border-top: 1.33em solid transparent;
 }
 
 .top-right-triangle{
@@ -89,19 +122,19 @@ main {
   height: 0;
   border-right: 1em solid transparent;
   border-left: 1em solid transparent;
-  border-bottom: 1.33em solid pink;
+  border-bottom: 1.33em solid transparent;
 }
 
 .bottom-left-triangle {
   width: 0;
   height: 0;
   border-left: 2em solid transparent;
-  border-top: 2.23em solid pink;
+  border-top: 2.23em solid transparent;
 }
 
 .bottom-right-triangle {
   width: 0;
   height: 0;
   border-right: 2em solid transparent;
-  border-top: 2.23em solid pink;
+  border-top: 2.23em solid transparent;
 }
