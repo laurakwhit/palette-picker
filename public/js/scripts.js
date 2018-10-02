@@ -29,6 +29,16 @@ function lockColor() {
   }
 }
 
+function createProject(event) {
+  event.preventDefault();
+  const project = `<article class="right-side__project">
+  <h2>${$(this).find('input').val().toUpperCase()}</h2>
+  </article>`;
+  $('.right-side__projects').prepend(project); 
+  $(this).find('input').val('');
+}
+
 $(window).on('load', generateGem);
 $('.left-side__new-gem-btn').on('click', generateGem);
 $('.left-side__diamond img').on('click', lockColor);
+$('.right-side__new-project-form').on('submit', createProject);
