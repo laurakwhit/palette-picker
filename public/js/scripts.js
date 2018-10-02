@@ -1,41 +1,34 @@
-class Gem {
-  constructor() {
-    this.colors = this.generateColors();
-    this.setGemColors();
+function generateGem() {
+  $('.top-left-triangle').css('border-bottom-color', generateColor);
+  $('.top-center-triangle').css('border-top-color', generateColor);
+  $('.top-right-triangle').css('border-bottom-color', generateColor);
+  $('.bottom-left-triangle').css('border-top-color', generateColor);
+  $('.bottom-right-triangle').css('border-top-color', generateColor);
+}
+
+function generateColor() {
+  const characters = "0123456789ABCDEF"; 
+  let color = '#'; 
+  
+  if ($(this).find('img').attr('src') === './assets/locked.svg') {
+    return $(this).find('h4').text();
   }
 
-  generateColors() {
-    let colors = [];
-
-    for (let i = 0; i < 5; i++) {
-      colors.push(this.generateHexCode())
-    }
-    return colors;
+  for (let i = 0; i < 6; i++)  {
+    color += characters[(Math.floor(Math.random() * 16))];
   }
+  $(this).find('h4').text(color)
+  return color; 
+}
 
-  generateHexCode() {
-    const characters = "0123456789ABCDEF"; 
-    let color = '#'; 
-
-    for (let i = 0; i < 6; i++)  {
-      color += characters[(Math.floor(Math.random() * 16))];
-    }
-    return color; 
-  }
-
-  setGemColors() {
-    $('.top-left-triangle').css('border-bottom-color', this.colors[0]);
-    $('.top-left-triangle h4').text(this.colors[0]);
-    $('.top-center-triangle').css('border-top-color', this.colors[1]);
-    $('.top-center-triangle h4').text(this.colors[1]);
-    $('.top-right-triangle').css('border-bottom-color', this.colors[2]);
-    $('.top-right-triangle h4').text(this.colors[2]);
-    $('.bottom-left-triangle').css('border-top-color', this.colors[3]);
-    $('.bottom-left-triangle h4').text(this.colors[3]);
-    $('.bottom-right-triangle').css('border-top-color', this.colors[4]);
-    $('.bottom-right-triangle h4').text(this.colors[4]);
+function lockColor() {
+  if ($(this).attr('src') === './assets/unlocked.svg') {
+    $(this).attr('src', './assets/locked.svg')
+  } else {
+    $(this).attr('src', './assets/unlocked.svg')
   }
 }
 
-$('.left-side__new-gem-btn').on('click', () => new Gem())
-$(window).on('load', () => new Gem())
+$(window).on('load', generateGem);
+$('.left-side__new-gem-btn').on('click', generateGem);
+$('.left-side__diamond img').on('click', lockColor);
