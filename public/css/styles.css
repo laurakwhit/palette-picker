@@ -10,8 +10,13 @@ header h1 {
   font-size: 6rem;
 }
 
+main {
+  display: flex;
+}
+
 .left-side {
   width: 55%;
+  height: calc(100vh - 6rem);
   text-align: center;
 }
 
@@ -20,15 +25,37 @@ header h1 {
   margin: 1rem;
 }
 
+.right-side {
+  width: 45%;
+  height: calc(100vh - 6rem);
+}
+
+.right-side__new-project-form {
+  width: 100%;
+}
+
+.right-side__new-gem-form {
+  display: flex;
+  width: 100%;
+}
+
+.gem-form__dropdown {
+
+}
+
 .left-side__diamond {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: calc(100vh - 10rem);
+  height: calc(100% - 4rem);
   background-color: black;
   font-size: 150px;
+}
+
+.project-gem__diamond {
+
 }
 
 .top-triangles {
@@ -44,7 +71,7 @@ header h1 {
   height: 0;
   border-right: 1em solid transparent;
   border-left: 1em  solid transparent;
-  border-bottom: calc(1em + 25px) solid pink;
+  border-bottom: 1.33em solid pink;
 }
 
 .top-center-triangle{
@@ -53,7 +80,7 @@ header h1 {
   height: 0;
   border-right: 1em solid transparent;
   border-left: 1em solid transparent;
-  border-top: calc(1em + 25px) solid pink;
+  border-top: 1.33em solid pink;
 }
 
 .top-right-triangle{
@@ -62,19 +89,19 @@ header h1 {
   height: 0;
   border-right: 1em solid transparent;
   border-left: 1em solid transparent;
-  border-bottom: calc(1em + 25px) solid pink;
+  border-bottom: 1.33em solid pink;
 }
 
 .bottom-left-triangle {
   width: 0;
   height: 0;
   border-left: 2em solid transparent;
-  border-top: calc(2em + 35px) solid pink;
+  border-top: 2.23em solid pink;
 }
 
 .bottom-right-triangle {
   width: 0;
   height: 0;
   border-right: 2em solid transparent;
-  border-top: calc(2em + 35px) solid pink;
+  border-top: 2.23em solid pink;
 }
