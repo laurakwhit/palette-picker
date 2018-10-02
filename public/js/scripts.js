@@ -31,14 +31,22 @@ function lockColor() {
 
 function createProject(event) {
   event.preventDefault();
+  const name = $(this).find('input').val().toUpperCase();
   const project = `<article class="right-side__project">
-  <h2>${$(this).find('input').val().toUpperCase()}</h2>
+  <h2>${name}</h2>
   </article>`;
+  const dropdownItem = `<li>${name}</li>`
   $('.right-side__projects').prepend(project); 
+  $('.gem-form__dropdown-content').prepend(dropdownItem)
   $(this).find('input').val('');
+}
+
+function saveGem() {
+
 }
 
 $(window).on('load', generateGem);
 $('.left-side__new-gem-btn').on('click', generateGem);
 $('.left-side__diamond img').on('click', lockColor);
 $('.right-side__new-project-form').on('submit', createProject);
+$('.right-side__new-gem-form').on('submit', saveGem);
