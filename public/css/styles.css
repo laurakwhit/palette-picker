@@ -43,6 +43,15 @@ main {
 
 }
 
+.gem-form__dropdown-content {
+  list-style: none;
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
 .left-side__diamond {
   display: flex;
   flex-direction: column;
@@ -116,7 +125,7 @@ main {
   border-top: 1.33em solid transparent;
 }
 
-.top-right-triangle{
+.top-right-triangle {
   margin-left: -1em;
   width: 0;
   height: 0;
