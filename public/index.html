@@ -2,10 +2,65 @@
 <html>
   <head>
     <title>Palette Picker</title>
+    <link rel="stylesheet" type="text/css" href="css/normalize.css">
     <link rel="stylesheet" type="text/css" href="css/styles.css">
   </head>
   <body>
-    <h1>Palette Picker</h1>
+    <header>
+      <h1>Palette Picker</h1>
+    </header>
+    <main>
+      <section class="left-side">
+          <div class='left-side__diamond'>
+              <div class='top-triangles'>
+                <div class='top-left-triangle'></div>
+                <div class='top-center-triangle'></div>
+                <div class='top-right-triangle'></div>
+              </div>
+              <div class='bottom-triangles'>
+                <div class='bottom-left-triangle'></div>
+                <div class='bottom-right-triangle'></div>
+              </div>
+            </div>
+        <button class="left-side__new-gem-btn">GENERATE A NEW GEM</button>
+      </section>
+      <section class="right-side">
+        <form class="right-side__new-project-form">
+          <input type="text" placeholder="PROJECT NAME"/>
+          <button>SAVE PROJECT</button>
+        </form>
+        <form class="right-side__new-gem-form">
+            <div class="gem-form__dropdown">
+                <button class="gem-form__dropbtn">SELECT PROJECT</button>
+                <ul class="gem-form__dropdown-content">
+                </ul>
+              </div>
+            <input type="text" placeholder="GEM NAME"/>
+            <button>SAVE GEM</button>
+          </form>
+          <section class="right-side__projects">
+            <article class="right-side__project">
+              <h2>PROJECT 1</h2>
+              <div class="right-side__project--gems">
+                <div class="right-side__project-gem">
+                    <!-- <div class='project-gem__diamond'>
+                        <div class='top-triangles'>
+                          <div class='top-left-triangle'></div>
+                          <div class='top-center-triangle'></div>
+                          <div class='top-right-triangle'></div>
+                        </div>
+                        <div class='bottom-triangles'>
+                          <div class='bottom-left-triangle'></div>
+                          <div class='bottom-right-triangle'></div>
+                        </div>
+                      </div> -->
+                      <h4>GEM NAME</h4>
+                </div>
+              </div>
+            </article>
+          </section>
+      </section>
+    </main>
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script type="text/javascript" src="js/scripts.js"></script>
   </body>
