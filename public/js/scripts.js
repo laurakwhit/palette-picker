@@ -80,6 +80,7 @@ function saveGemPalette(event) {
 
 function createGemPalette(project, gemName) {
   const gem = ` <div class="right-side__project-gem">
+    <button class="project-gem__delete-btn">X</button>
     <div class='project-gem__diamond'>
       <div class='top-triangles'>
         <div class='top-left-triangle top-left-triangle-${project}__${gemName}'></div>
@@ -109,6 +110,10 @@ function setGemToPalette() {
   generateGem(colors);
 }
 
+function deleteGemPalette() {
+  $(this).parent('.right-side__project-gem').remove();
+}
+
 $(window).on('load', generateGem);
 $('.left-side__new-gem-btn').on('click', generateGem);
 $('.left-side__diamond').on('click', 'img', lockColor);
@@ -117,3 +122,4 @@ $('.gem-form__dropbtn').on('click', displayProjectDropdown);
 $('.right-side__new-gem-form').on('submit', saveGemPalette);
 $('.gem-form__dropdown-content').on('click', 'li', selectProject);
 $('.right-side').on('click', '.project-gem__diamond', setGemToPalette);
+$('.right-side').on('click', '.project-gem__delete-btn', deleteGemPalette);
