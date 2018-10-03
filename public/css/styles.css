@@ -78,52 +78,52 @@ main {
 
 .top-left-triangle img {
   top: 16rem;
-  left: 22vw;
+  left: 22%;
 }
 
 .top-left-triangle h4 {
   top: 16rem;
-  left: 8vw;
+  left: 8%;
 }
 
 .top-center-triangle img {
   top: 14rem;
-  left: 26.5vw;
+  left: 26.5%;
 }
 
 .top-center-triangle h4 {
   top: 7rem;
-  left: 23.5vw;
+  left: 23.5%;
 }
 
 .top-right-triangle img {
   top: 16rem;
-  left: 31vw;
+  left: 31%;
 }
 
 .top-right-triangle h4 {
   top: 16rem;
-  left: 39vw;
+  left: 39%;
 }
 
 .bottom-left-triangle img {
   top: 20rem;
-  left: 23.5vw;
+  left: 23.5%;
 }
 
 .bottom-left-triangle h4 {
   top: 20rem;
-  left: 10vw;
+  left: 10%;
 }
 
 .bottom-right-triangle img {
   top: 20rem;
-  left: 29.5vw;
+  left: 29.5%;
 }
 
 .bottom-right-triangle h4 {
   top: 20rem;
-  left: 38vw;
+  left: 38%;
 }
 
 .right-side__project-gem {

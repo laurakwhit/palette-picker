@@ -9,6 +9,12 @@ function generateGem(colors) {
   $('.bottom-right-triangle-main').css('border-top-color', colors[4] || generateColor);
 }
 
+function resetLocks() {
+  for (i = 1; i < 6; i++) {
+    $(`#lock${i}`).attr('src', './assets/unlocked.svg'); 
+  }
+}
+
 function generateColor() {
   const characters = "0123456789ABCDEF"; 
   let color = '#'; 
@@ -108,6 +114,7 @@ function setGemToPalette() {
   const paletteName = $(this).siblings('h4').text();
   const colors = ['#C4AD51', '#DD31BB', '#39695', '#54437F', '#654429']; //temporary color, will pull from db
   generateGem(colors);
+  resetLocks()
 }
 
 function deleteGemPalette() {
