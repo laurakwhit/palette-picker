@@ -126,8 +126,13 @@ main {
   left: 38vw;
 }
 
-.project-gem__diamond {
+.right-side__project-gem {
+  width: 4rem;
+}
 
+.project-gem__diamond {
+  width: 100%;
+  cursor: pointer;
 }
 
 .top-triangles {
