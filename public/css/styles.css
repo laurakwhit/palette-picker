@@ -58,7 +58,7 @@ main {
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: calc(100% - 4rem);
+  /* height: calc(100vh - 10rem); */
   background-color: black;
   font-size: 150px;
 }
@@ -77,23 +77,53 @@ main {
 }
 
 .top-left-triangle img {
-  top: 16.5rem;
-  left: 22%;
+  top: 16rem;
+  left: 22vw;
 }
 
 .top-left-triangle h4 {
-  top: 16.5rem;
-  left: 8%;
+  top: 16rem;
+  left: 8vw;
 }
 
 .top-center-triangle img {
-  top: 14.5rem;
-  left: 26.5%;
+  top: 14rem;
+  left: 26.5vw;
 }
 
 .top-center-triangle h4 {
   top: 7rem;
-  left: 23.5%;
+  left: 23.5vw;
+}
+
+.top-right-triangle img {
+  top: 16rem;
+  left: 31vw;
+}
+
+.top-right-triangle h4 {
+  top: 16rem;
+  left: 39vw;
+}
+
+.bottom-left-triangle img {
+  top: 20rem;
+  left: 23.5vw;
+}
+
+.bottom-left-triangle h4 {
+  top: 20rem;
+  left: 10vw;
+}
+
+.bottom-right-triangle img {
+  top: 20rem;
+  left: 29.5vw;
+}
+
+.bottom-right-triangle h4 {
+  top: 20rem;
+  left: 38vw;
 }
 
 .project-gem__diamond {
@@ -109,8 +139,8 @@ main {
 }
 
 .top-left-triangle {
-  width: 0;
-  height: 0;
+  /* width: 0;
+  height: 0; */
   border-right: 1em solid transparent;
   border-left: 1em  solid transparent;
   border-bottom: 1.33em solid transparent;
@@ -118,8 +148,8 @@ main {
 
 .top-center-triangle{
   margin-left: -1em;
-  width: 0;
-  height: 0;
+  /* width: 0;
+  height: 0; */
   border-right: 1em solid transparent;
   border-left: 1em solid transparent;
   border-top: 1.33em solid transparent;
@@ -127,23 +157,23 @@ main {
 
 .top-right-triangle {
   margin-left: -1em;
-  width: 0;
-  height: 0;
+  /* width: 0;
+  height: 0; */
   border-right: 1em solid transparent;
   border-left: 1em solid transparent;
   border-bottom: 1.33em solid transparent;
 }
 
 .bottom-left-triangle {
-  width: 0;
-  height: 0;
+  /* width: 0;
+  height: 0; */
   border-left: 2em solid transparent;
   border-top: 2.23em solid transparent;
 }
 
 .bottom-right-triangle {
-  width: 0;
-  height: 0;
+  /* width: 0;
+  height: 0; */
   border-right: 2em solid transparent;
   border-top: 2.23em solid transparent;
 }

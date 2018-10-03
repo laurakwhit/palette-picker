@@ -85,12 +85,9 @@ function createGemPalette(gemName) {
   $('.right-side__project--gems').prepend(gem);
   $(`.top-left-triangle-${gemName}`).css('border-bottom-color', $('.top-left-triangle').find('h4').text());
   $(`.top-center-triangle-${gemName}`).css('border-top-color', $('.top-center-triangle').find('h4').text());
-  // $(`.top-right-triangle-${gemName}`).css('border-bottom-color', $('.top-right-triangle').find('h4').text());
-  $(`.top-right-triangle-${gemName}`).css('border-bottom-color', 'black');
-  // $(`.bottom-left-triangle-${gemName}`).css('border-top-color', $('.bottom-left-triangle').find('h4').text());
-  $(`.bottom-left-triangle-${gemName}`).css('border-top-color', 'black');
-  // $(`.bottom-right-triangle-${gemName}`).css('border-top-color', $('.bottom-right-triangle').find('h4').text());
-  $(`.bottom-right-triangle-${gemName}`).css('border-top-color', 'black');
+  $(`.top-right-triangle-${gemName}`).css('border-bottom-color', $('.top-right-triangle').find('h4').text());
+  $(`.bottom-left-triangle-${gemName}`).css('border-top-color', $('.bottom-left-triangle').find('h4').text());
+  $(`.bottom-right-triangle-${gemName}`).css('border-top-color', $('.bottom-right-triangle').find('h4').text());
 }
 
 $(window).on('load', generateGem);
