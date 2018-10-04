@@ -46,18 +46,23 @@ function lockColor() {
   }
 }
 
-function createProject(event) {
+function submitProject(event) {
   event.preventDefault();
   const name = $(this).find('input').val().toUpperCase();
+  createProject(name);
+  $(this).find('input').val('');
+}
+
+function createProject(name) {
+  const className = name.replace(/\s/g, '');
   const project = `<article class="right-side__project">
     <h2>${name}</h2>
-    <div class="right-side__project--gems ${name}"></div>
+    <div class="right-side__project--gems ${className}"></div>
   </article>`;
   const dropdownItem = `<li>${name}</li>`
 
   $('.right-side__projects').prepend(project); 
   $('.gem-form__dropdown-content').prepend(dropdownItem)
-  $(this).find('input').val('');
 }
 
 function displayProjectDropdown(event) {
@@ -84,7 +89,8 @@ function saveGemPalette(event) {
   }
 }
 
-function createGemPalette(project, gemName) {
+function createGemPalette(project, gemName, colors) {
+  project = project.replace(/\s/g, '');
   const gem = ` <div class="right-side__project-gem">
     <button class="project-gem__delete-btn">X</button>
     <div class='project-gem__diamond'>
@@ -102,11 +108,11 @@ function createGemPalette(project, gemName) {
     </div>
   </div>`;
   $(`.${project}`).prepend(gem);
-  $(`.top-left-triangle-${project}__${gemName}`).css('border-bottom-color', $('.top-left-triangle').find('h4').text());
-  $(`.top-center-triangle-${project}__${gemName}`).css('border-top-color', $('.top-center-triangle').find('h4').text());
-  $(`.top-right-triangle-${project}__${gemName}`).css('border-bottom-color', $('.top-right-triangle').find('h4').text());
-  $(`.bottom-left-triangle-${project}__${gemName}`).css('border-top-color', $('.bottom-left-triangle').find('h4').text());
-  $(`.bottom-right-triangle-${project}__${gemName}`).css('border-top-color', $('.bottom-right-triangle').find('h4').text());
+  $(`.top-left-triangle-${project}__${gemName}`).css('border-bottom-color', colors[0] || $('.top-left-triangle').find('h4').text());
+  $(`.top-center-triangle-${project}__${gemName}`).css('border-top-color', colors[1] || $('.top-center-triangle').find('h4').text());
+  $(`.top-right-triangle-${project}__${gemName}`).css('border-bottom-color', colors[2] || $('.top-right-triangle').find('h4').text());
+  $(`.bottom-left-triangle-${project}__${gemName}`).css('border-top-color', colors[3] || $('.bottom-left-triangle').find('h4').text());
+  $(`.bottom-right-triangle-${project}__${gemName}`).css('border-top-color', colors[4] || $('.bottom-right-triangle').find('h4').text());
 }
 
 function setGemToPalette() {
@@ -121,10 +127,32 @@ function deleteGemPalette() {
   $(this).parent('.right-side__project-gem').remove();
 }
 
+const fetchProjects = async () =>{
+  const response = await fetch('http://localhost:3000/api/v1/projects');
+  const projects = await response.json();
+  fetchPalettes(projects[0])
+  projects.forEach( project => {
+    createProject(project.name)
+    // fetchPalettes(project)
+  });
+}
+
+const fetchPalettes = async (project) => {
+  const response = await fetch(`http://localhost:3000/api/v1/palettes/${project.id}`);
+  const projectPalettes = await response.json();
+  projectPalettes.forEach( palette => {
+    let colors = [];
+    for (i = 1; i < 6; i++) {
+      colors.push(palette[`color${i}`]);
+    }
+    createGemPalette(project.name, palette.name, colors)
+  });
+}
+
 $(window).on('load', generateGem);
 $('.left-side__new-gem-btn').on('click', generateGem);
 $('.left-side__diamond').on('click', 'img', lockColor);
-$('.right-side__new-project-form').on('submit', createProject);
+$('.right-side__new-project-form').on('submit', submitProject);
 $('.gem-form__dropbtn').on('click', displayProjectDropdown);
 $('.right-side__new-gem-form').on('submit', saveGemPalette);
 $('.gem-form__dropdown-content').on('click', 'li', selectProject);
