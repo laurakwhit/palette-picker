@@ -130,7 +130,7 @@ function deleteGemPalette() {
 }
 
 const fetchProjects = async () =>{
-  const response = await fetch('http://localhost:3000/api/v1/projects');
+  const response = await fetch('/api/v1/projects');
   const projects = await response.json();
   fetchPalettes(projects[0])
   projects.forEach( project => {
@@ -140,7 +140,7 @@ const fetchProjects = async () =>{
 }
 
 const fetchPalettes = async (project) => {
-  const response = await fetch(`http://localhost:3000/api/v1/palettes/${project.id}`);
+  const response = await fetch(`/api/v1/palettes/${project.id}`);
   const projectPalettes = await response.json();
   projectPalettes.forEach( palette => {
     let colors = [];
@@ -152,7 +152,7 @@ const fetchPalettes = async (project) => {
 }
 
 const fetchPalette = async(paletteId) => {
-  const response = await fetch(`http://localhost:3000/api/v1/palette/${paletteId}`);
+  const response = await fetch(`/api/v1/palette/${paletteId}`);
   const palette = await response.json();
 }
 
