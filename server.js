@@ -41,9 +41,9 @@ app.get('/api/v1/palette/:palette_id', (request, response) => {
   const { palette_id } = request.params;
 
   database('palettes').where('id', palette_id).select()
-    .then(palettes => {
-      if (palettes.length) {
-        response.status(200).json(palettes);
+    .then(palette => {
+      if (palette.length) {
+        response.status(200).json(palette[0]);
       } else {
         response.status(404).json({ 
           error: `Could not find a palette with id ${palette_id}`

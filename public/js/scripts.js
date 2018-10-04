@@ -139,7 +139,7 @@ const saveGemPalette = async (projectId, name, colors) => {
 function createGemPalette(paletteId, projectId, name, colors) {
   const gem = ` <div class="right-side__project-gem">
     <button class="project-gem__delete-btn">X</button>
-    <div class='project-gem__diamond'>
+    <div data-id=${paletteId} class='project-gem__diamond'>
       <div class='top-triangles'>
         <div class='top-left-triangle top-left-triangle__${projectId}-${paletteId}'></div>
         <div class='top-center-triangle top-center-triangle__${projectId}-${paletteId}'></div>
@@ -161,13 +161,21 @@ function createGemPalette(paletteId, projectId, name, colors) {
   $(`.bottom-right-triangle__${projectId}-${paletteId}`).css('border-top-color', colors[4]);
 }
 
-function setGemToPalette() {
-  const projectName = $(this).closest('.right-side__projects').find('h2').text();
-  const paletteName = $(this).siblings('h4').text();
+const fetchPalette = async(paletteId) => {
+  const response = await fetch(`/api/v1/palette/${paletteId}`);
+  return await response.json();
+}
 
-  const colors = ['#C4AD51', '#DD31BB', '#39695', '#54437F', '#654429']; //temporary color, will pull from db
+async function setGemToPalette() {
+  const paletteId = $(this).attr('data-id');
+  const palette = await fetchPalette(paletteId);
+  let colors = [];
+
+  for (i = 1; i < 6; i++) {
+    colors.push(palette[`color${i}`])
+  }
   generateGem(colors);
-  resetLocks()
+  resetLocks();
 }
 
 function deleteGemPalette() {
@@ -205,11 +213,6 @@ const fetchPalettes = async (projectId) => {
   } catch (error) {
     throw new Error(error.message);
   }
-}
-
-const fetchPalette = async(paletteId) => {
-  const response = await fetch(`/api/v1/palette/${paletteId}`);
-  const palette = await response.json();
 }
 
 $(window).on('load', () => {
