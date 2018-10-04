@@ -153,7 +153,7 @@ function createGemPalette(paletteId, projectId, name, colors) {
     <h4>${name}</h4>
     </div>
   </div>`;
-  $(`#${projectId}`).prepend(gem);
+  $(`#${projectId}`).append(gem);
   $(`.top-left-triangle__${projectId}-${paletteId}`).css('border-bottom-color', colors[0]);
   $(`.top-center-triangle__${projectId}-${paletteId}`).css('border-top-color', colors[1]);
   $(`.top-right-triangle__${projectId}-${paletteId}`).css('border-bottom-color', colors[2]);
@@ -174,28 +174,37 @@ function deleteGemPalette() {
   $(this).parent('.right-side__project-gem').remove();
 }
 
-const fetchProjects = async () =>{
-  const response = await fetch('/api/v1/projects');
-  const projects = await response.json();
-  if (projects) {
-    fetchPalettes(projects[0])
-    projects.forEach( project => {
-      createProject(project.name, project.id)
-      // fetchPalettes(project)
-    });
+const fetchProjects = async () => {
+  try {
+    const response = await fetch('/api/v1/projects');
+    const projects = await response.json();
+    if (projects) {
+      projects.forEach( project => {
+        createProject(project.name, project.id)
+        fetchPalettes(project.id)
+      });
+    }
+  } catch (error) {
+    throw new Error(error.message);
   }
 }
 
-const fetchPalettes = async (project) => {
-  const response = await fetch(`/api/v1/palettes/${project.id}`);
-  const projectPalettes = await response.json();
-  projectPalettes.forEach( palette => {
-    let colors = [];
-    for (i = 1; i < 6; i++) {
-      colors.push(palette[`color${i}`]);
+const fetchPalettes = async (projectId) => {
+  try {
+    const response = await fetch(`/api/v1/palettes/${projectId}`);
+    const projectPalettes = await response.json();
+    if (projectPalettes.length) {
+      projectPalettes.forEach( palette => {
+        let colors = [];
+        for (i = 1; i < 6; i++) {
+          colors.push(palette[`color${i}`]);
+        }
+        createGemPalette(palette.id, projectId, palette.name, colors);
+      });
     }
-    // createGemPalette(project.name, palette.name, colors)
-  });
+  } catch (error) {
+    throw new Error(error.message);
+  }
 }
 
 const fetchPalette = async(paletteId) => {
