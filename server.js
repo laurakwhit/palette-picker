@@ -108,6 +108,18 @@ app.post('/api/v1/projects/:project_id/palettes', (request, response) => {
     });
 });
 
+app.delete('/api/v1/palettes/:palette_id', (request, response) => {
+  const { palette_id } = request.params;
+
+  database('palettes').where('id', palette_id).del()
+    .then( () => {
+      response.status(204)
+    })
+    .catch(error => {
+      return response.status(500).json({ error })
+    })
+});
+
 app.listen(app.get('port'), () => {
   console.log(`App is running on ${app.get('port')}.`);
 });
