@@ -49,17 +49,32 @@ function lockColor() {
 function submitProject(event) {
   event.preventDefault();
   const name = $(this).find('input').val().toUpperCase();
-  createProject(name);
+  saveProject(name);
   $(this).find('input').val('');
 }
 
-function createProject(name) {
-  const className = name.replace(/\s/g, '');
-  const project = `<article class="right-side__project">
+const saveProject = async (name) => {
+  try {
+    const response = await fetch('/api/v1/projects', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ name })
+    });
+    const project = await response.json();
+    createProject(name, project.id);
+  } catch (error) {
+    throw new Error(error.message);
+  }
+}
+
+function createProject(name, id) {
+  const project = `<article data-id="${id}" class="right-side__project">
     <h2>${name}</h2>
-    <div class="right-side__project--gems ${className}"></div>
+    <div class="right-side__project--gems"></div>
   </article>`;
-  const dropdownItem = `<li>${name}</li>`
+  const dropdownItem = `<li>${name}</li>`;
 
   $('.right-side__projects').prepend(project); 
   $('.gem-form__dropdown-content').prepend(dropdownItem)
@@ -132,11 +147,13 @@ function deleteGemPalette() {
 const fetchProjects = async () =>{
   const response = await fetch('/api/v1/projects');
   const projects = await response.json();
-  fetchPalettes(projects[0])
-  projects.forEach( project => {
-    createProject(project.name)
-    // fetchPalettes(project)
-  });
+  if (projects) {
+    fetchPalettes(projects[0])
+    projects.forEach( project => {
+      createProject(project.name)
+      // fetchPalettes(project)
+    });
+  }
 }
 
 const fetchPalettes = async (project) => {
