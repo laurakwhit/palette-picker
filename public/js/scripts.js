@@ -1,4 +1,4 @@
-function generateGem(colors) {
+function generateGem(colors = []) {
   if (colors) {
     setHexCodes(colors);
   }
@@ -89,8 +89,9 @@ function saveGemPalette(event) {
   }
 }
 
-function createGemPalette(project, gemName, colors) {
+function createGemPalette(project, gemName, colors = []) {
   project = project.replace(/\s/g, '');
+  gemName = gemName.replace(/\s/g, '');
   const gem = ` <div class="right-side__project-gem">
     <button class="project-gem__delete-btn">X</button>
     <div class='project-gem__diamond'>
@@ -149,7 +150,10 @@ const fetchPalettes = async (project) => {
   });
 }
 
-$(window).on('load', generateGem);
+$(window).on('load', () => {
+  generateGem()
+  fetchProjects()
+});
 $('.left-side__new-gem-btn').on('click', generateGem);
 $('.left-side__diamond').on('click', 'img', lockColor);
 $('.right-side__new-project-form').on('submit', submitProject);
