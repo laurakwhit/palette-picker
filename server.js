@@ -22,7 +22,7 @@ app.get('/api/v1/projects', (request, response) => {
 app.get('/api/v1/palettes/:project_id', (request, response) => {
   const { project_id } = request.params;
 
-  database('palettes').where('id', project_id).select()
+  database('palettes').where('project_id', project_id).select()
     .then(palettes => {
       if (palettes.length) {
         response.status(200).json(palettes);
