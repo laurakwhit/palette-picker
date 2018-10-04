@@ -119,6 +119,7 @@ function createGemPalette(project, gemName, colors = []) {
 function setGemToPalette() {
   const projectName = $(this).closest('.right-side__projects').find('h2').text();
   const paletteName = $(this).siblings('h4').text();
+
   const colors = ['#C4AD51', '#DD31BB', '#39695', '#54437F', '#654429']; //temporary color, will pull from db
   generateGem(colors);
   resetLocks()
@@ -148,6 +149,11 @@ const fetchPalettes = async (project) => {
     }
     createGemPalette(project.name, palette.name, colors)
   });
+}
+
+const fetchPalette = async(paletteId) => {
+  const response = await fetch(`http://localhost:3000/api/v1/palette/${paletteId}`);
+  const palette = await response.json();
 }
 
 $(window).on('load', () => {
