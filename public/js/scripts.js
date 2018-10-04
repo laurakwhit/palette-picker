@@ -172,14 +172,25 @@ async function setGemToPalette() {
   let colors = [];
 
   for (i = 1; i < 6; i++) {
-    colors.push(palette[`color${i}`])
+    colors.push(palette[`color${i}`]);
   }
   generateGem(colors);
   resetLocks();
 }
 
-function deleteGemPalette() {
+async function deleteGemPalette() {
+  const paletteId = $(this).siblings('.project-gem__diamond').attr('data-id');
   $(this).parent('.right-side__project-gem').remove();
+  try {
+    await fetch(`/api/v1/palettes/${paletteId}`, {
+      method: 'DELETE',
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    });
+  } catch (error) {
+    throw new Error(error.message);
+  }
 }
 
 const fetchProjects = async () => {
