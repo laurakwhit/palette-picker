@@ -96,6 +96,7 @@ function submitGemPalette(event) {
   let project = $('.gem-form__dropbtn').text();
   let projectId = $('.gem-form__dropbtn').attr('data-id');
   let gemName = $('.right-side__new-gem-form').find('input').val();
+  //$('.right-side__diamond').find('h4').text()
   const colors = [ 
     $('.top-left-triangle').find('h4').text(),
     $('.top-center-triangle').find('h4').text(),
@@ -153,7 +154,7 @@ function createGemPalette(paletteId, projectId, name, colors) {
     <h4>${name}</h4>
     </div>
   </div>`;
-  $(`#${projectId}`).append(gem);
+  $(`#${projectId}`).find('.right-side__project--gems').append(gem);
   $(`.top-left-triangle__${projectId}-${paletteId}`).css('border-bottom-color', colors[0]);
   $(`.top-center-triangle__${projectId}-${paletteId}`).css('border-top-color', colors[1]);
   $(`.top-right-triangle__${projectId}-${paletteId}`).css('border-bottom-color', colors[2]);
