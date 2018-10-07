@@ -139,7 +139,7 @@ const saveGemPalette = async (projectId, name, colors) => {
 
 function createGemPalette(paletteId, projectId, name, colors) {
   const gem = ` <div class="right-side__project-gem">
-    <button class="project-gem__delete-btn">X</button>
+  <button class="project-gem__delete-btn"></button>
     <div data-id=${paletteId} class='project-gem__diamond'>
       <div class='top-triangles'>
         <div class='top-left-triangle top-left-triangle__${projectId}-${paletteId}'></div>
@@ -152,6 +152,7 @@ function createGemPalette(paletteId, projectId, name, colors) {
       </div>
     </div>
     <h4>${name}</h4>
+    
     </div>
   </div>`;
   $(`#${projectId}`).find('.right-side__project--gems').append(gem);
