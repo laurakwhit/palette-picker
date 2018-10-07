@@ -136,16 +136,163 @@
   .left-side__diamond {
     font-size: 125px;
   }
+
+  .top-left-triangle img {
+    top: 8rem;
+  }
+  
+  .top-left-triangle h4 {
+    top: 8rem;
+  }
+  
+  .top-center-triangle img {
+    top: -4rem;
+  }
+  
+  .top-center-triangle h4 {
+    top: -10rem;
+  }
+  
+  .top-right-triangle img {
+    top: 8rem;
+  }
+  
+  .top-right-triangle h4 {
+    top: 8rem;
+  }
+  
+  .bottom-left-triangle img {
+    top: -16rem;
+  }
+  
+  .bottom-left-triangle h4 {
+    top: -16rem;
+    left: -12rem;
+  }
+  
+  .bottom-right-triangle img {
+    top: -16rem;
+  }
+  
+  .bottom-right-triangle h4 {
+    top: -16rem;
+    left: 5rem;
+  }
 }
 
 @media only screen and (max-width: 530px) { 
   .left-side__diamond {
     font-size: 100px;
   }
+
+  .left-side__diamond h4 {
+    font-size: 1rem;
+  }
+
+  .left-side__diamond img {
+    width: 1rem;
+  }
+
+  .top-left-triangle img {
+    top: 6.5rem;
+    left: 3rem;
+  }
+  
+  .top-left-triangle h4 {
+    top: 6.5rem;
+    left: -4rem;
+  }
+  
+  .top-center-triangle img {
+    top: -3.5rem;
+  }
+  
+  .top-center-triangle h4 {
+    top: -7.5rem;
+    left: -2rem;
+  }
+  
+  .top-right-triangle img {
+    top: 6.5rem;
+    left: -4rem;
+  }
+  
+  .top-right-triangle h4 {
+    top: 6.5rem;
+    left: -.5rem;
+  }
+  
+  .bottom-left-triangle img {
+    top: -12.5rem;
+    left: -2.5rem;
+  }
+  
+  .bottom-left-triangle h4 {
+    top: -12.5rem;
+    left: -9rem;
+  }
+  
+  .bottom-right-triangle img {
+    top: -12.5rem;
+    left: 1.5rem;
+  }
+  
+  .bottom-right-triangle h4 {
+    top: -12.5rem;
+    left: 5rem;
+  }
 }
 
 @media only screen and (max-width: 460px) { 
   .left-side__diamond {
     font-size: 75px;
+  }
+
+  .top-left-triangle img {
+    top: 4.5rem;
+    left: 2rem;
+  }
+  
+  .top-left-triangle h4 {
+    top: 5rem;
+    left: -3.5rem;
+  }
+  
+  .top-center-triangle img {
+    top: -3rem;
+  }
+  
+  .top-center-triangle h4 {
+    top: -6rem;
+  }
+  
+  .top-right-triangle img {
+    top: 4.5rem;
+    left: -3rem;
+  }
+  
+  .top-right-triangle h4 {
+    top: 5rem;
+    left: -.5rem;
+  }
+  
+  .bottom-left-triangle img {
+    top: -10rem;
+    left: -2rem;
+  }
+  
+  .bottom-left-triangle h4 {
+    top: -10rem;
+    left: -7.5rem;
+  }
+  
+  .bottom-right-triangle img {
+    top: -10rem;
+    left: 1rem;
+  }
+  
+  .bottom-right-triangle h4 {
+    top: -10rem;
+    left: 3rem;
   }
 }

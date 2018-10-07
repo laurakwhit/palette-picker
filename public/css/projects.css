@@ -37,3 +37,9 @@
   background: url(../assets/red-delete.svg) no-repeat center center;
   border-radius: 0;
 }
+
+@media only screen and (max-width: 1125px) { 
+  .right-side__projects {
+    height: auto;
+  }
+}

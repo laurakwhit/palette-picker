@@ -77,3 +77,18 @@
   background-color: #23ADF0;
   background-size: 1rem;
 }
+
+@media only screen and (max-width: 460px) { 
+  .right-side__new-gem-form {
+    flex-direction: column;
+  }
+
+  .gem-form__dropdown {
+    width: 96%;
+  }  
+  .right-side__new-gem-form input {
+    height: 2rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}
