@@ -1,0 +1,39 @@
+
+.right-side__projects {
+  height: calc(100% - 7rem);
+  padding: 0 .5rem;
+  border-top: 1px solid #E7E9EB;
+  overflow: auto;
+}
+
+.right-side__project h2 {
+  margin: .5rem 0;
+}
+
+.right-side__project--gems {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.right-side__project-gem {
+  margin: 0 1rem;
+  text-align: center;
+}
+
+.right-side__project-gem h4 {
+  margin: .5rem 0;
+}
+
+.project-gem__delete-btn {
+  height: 1.5rem;
+  margin: 0 0 .2rem 65%;
+  border-radius: none;
+  background: url(../assets/delete.svg) no-repeat center center;
+  background-size: 1rem;
+}
+
+.project-gem__delete-btn:hover {
+  background-color: transparent;
+  background: url(../assets/red-delete.svg) no-repeat center center;
+  border-radius: 0;
+}

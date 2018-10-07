@@ -1,0 +1,73 @@
+/* New Project Form */
+.right-side__new-project-form {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.right-side__new-project-form input {
+  flex-grow: 1;
+  margin: 0 .5rem;
+}
+
+.right-side__new-project-form button {
+  margin: 0 .5rem;
+}
+
+/* New Gem Form */
+.right-side__new-gem-form {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.right-side__new-gem-form input {
+  flex-grow: 1;
+  margin: 0 .5rem;
+}
+
+.right-side__new-gem-form button {
+  margin: 0 .5rem;
+}
+
+/* Gem Dropdown */
+.gem-form__dropdown {
+  position: relative;
+  width: 35%;
+  margin-right: .5rem;
+}
+
+.gem-form__dropbtn {
+  width: 100%;
+  padding-right: 3rem;
+  background: url(../assets/down-arrow.svg) no-repeat 92% center;
+  background-color: #23ADF0;
+  background-size: 1rem;
+}
+
+.gem-form__dropdown-content {
+  display: none;
+  position: absolute;
+  width: calc(100% + .5rem);
+  padding: 0;
+  background-color: #ffffff;
+  text-align: center;
+  list-style: none;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.gem-form__dropdown-content li {
+  margin: .5rem 0;
+  color: #A7B3C2;
+}
+
+.gem-form__dropdown-content li:hover {
+  color: #596371;
+}
+
+.show {
+  display: block;
+}

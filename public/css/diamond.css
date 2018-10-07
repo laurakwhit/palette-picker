@@ -1,0 +1,128 @@
+/* Diamond shape */
+.top-triangles {
+  display: flex;
+}
+
+.bottom-triangles {
+  display: flex;
+}
+
+.top-left-triangle {
+  border-left: 1em solid transparent;
+  border-right: 1em solid transparent;
+  border-bottom: 1.33em solid transparent;
+}
+
+.top-center-triangle {
+  margin-left: -1em;
+  border-left: 1em solid transparent;
+  border-right: 1em solid transparent;
+  border-top: 1.33em solid transparent;
+}
+
+.top-right-triangle {
+  margin-left: -1em;
+  border-left: 1em solid transparent;
+  border-right: 1em solid transparent;
+  border-bottom: 1.33em solid transparent;
+}
+
+.bottom-left-triangle {
+  border-left: 2em solid transparent;
+  border-top: 2.23em solid transparent;
+}
+
+.bottom-right-triangle {
+  border-right: 2em solid transparent;
+  border-top: 2.23em solid transparent;
+}
+
+/* Main Diamond */
+.left-side__diamond {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-top: 1rem;
+  font-size: 150px;
+}
+
+.left-side__diamond h4 {
+  position: absolute;
+  margin: 0;
+  z-index: 1;
+  color: #ffffff;
+  text-shadow: 1px 1px 1px #3C4858;
+  font-size: 25px;
+}
+
+.left-side__diamond img {
+  position: absolute;
+  z-index: 1;
+  width: 25px;
+}
+
+.left-side__diamond img:hover {
+  transform: scale(1.2);
+}
+
+.top-left-triangle img {
+  top: 17rem;
+  left: 22%;
+}
+
+.top-left-triangle h4 {
+  top: 17rem;
+  left: 8%;
+}
+
+.top-center-triangle img {
+  top: 15rem;
+  left: 26.5%;
+}
+
+.top-center-triangle h4 {
+  top: 8rem;
+  left: 23.5%;
+}
+
+.top-right-triangle img {
+  top: 17rem;
+  left: 31%;
+}
+
+.top-right-triangle h4 {
+  top: 17rem;
+  left: 39%;
+}
+
+.bottom-left-triangle img {
+  top: 21rem;
+  left: 23.5%;
+}
+
+.bottom-left-triangle h4 {
+  top: 21rem;
+  left: 10%;
+}
+
+.bottom-right-triangle img {
+  top: 21rem;
+  left: 29.5%;
+}
+
+.bottom-right-triangle h4 {
+  top: 21rem;
+  left: 38%;
+}
+
+/* Smaller Palette Diamond */
+.right-side__project-gem {
+  width: 4rem;
+}
+
+.project-gem__diamond {
+  width: 100%;
+  cursor: pointer;
+}

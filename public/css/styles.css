@@ -1,16 +1,14 @@
 * {
+  color: #3C4858;
   font-family: 'Poppins', sans-serif;
   font-weight: 400;
-  color: #3C4858;
 }
 
 header {
-  text-align: center;
-  border-bottom: 1px solid #E7E9EB;
-  width: 100%;
   height: 6rem;
-  /* margin-bottom: 1rem; */
-  /* padding-bottom: .5rem; */
+  width: 100%;
+  border-bottom: 1px solid #E7E9EB;
+  text-align: center;
 }
 
 header h1 {
@@ -28,7 +26,6 @@ main {
 
 button {
   padding: .5rem 1rem;
-  /* border: 2px solid #23ADF0; */
   border: none;
   border-radius: 10px;
   background-color: #23ADF0;
@@ -37,15 +34,14 @@ button {
 }
 
 button:hover {
-  /* color: #3C4858; */
   background-color: #22A6E5;
 }
 
 input {
-  border: 1px solid #E7E9EB;
-  border-radius: 10px;
   height: 2rem;
   padding-left: .5rem;  
+  border: 1px solid #E7E9EB;
+  border-radius: 10px;
 }
 
 .left-side {
@@ -60,226 +56,11 @@ input {
 }
 
 .right-side {
-  width: 45%;
   height: calc(100vh - 7rem);
+  width: 45%;
   border-left: 1px solid #E7E9EB;
 }
 
 .right-side h2 {
   font-weight: 600;
-}
-
-.right-side__new-project-form {
-  width: 100%;
-  margin: 1rem 0;
-  display: flex;
-  justify-content: space-around;
-}
-
-.right-side__new-project-form input {
-  width: 50%;
-}
-
-.right-side__new-gem-form {
-  display: flex;
-  width: 100%;
-  margin-bottom: 1rem;
-  justify-content: space-around;
-}
-
-.right-side__new-gem-form input {
-  /* margin: 0 .5rem; */
-  width: 40%;
-}
-
-.gem-form__dropdown {
-
-}
-
-.gem-form__dropdown-content {
-  list-style: none;
-  display: none;
-}
-
-.show {
-  display: block;
-}
-
-.right-side__projects {
-  height: calc(100% - 7rem);
-  padding: 0 .5rem;
-  border-top: 1px solid #E7E9EB;
-  overflow: auto;
-}
-
-.right-side__project h2 {
-  margin: .5rem 0;
-}
-
-.right-side__project--gems {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.right-side__project-gem {
-  margin: 0 1rem;
-  text-align: center;
-}
-
-.right-side__project-gem h4 {
-  margin: .5rem 0;
-  /* text-align: center; */
-}
-
-.project-gem__delete-btn {
-  height: 1.5rem;
-  margin: 0 0 .2rem 65%;
-  border-radius: none;
-  background: url(../assets/delete.svg) no-repeat center center;
-  background-size: 1rem;
-}
-
-.project-gem__delete-btn:hover {
-  background-color: transparent;
-  background: url(../assets/red-delete.svg) no-repeat center center;
-  border-radius: 0;
-}
-
-.left-side__diamond {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin-top: 1rem;
-  /* height: calc(100vh - 10rem); */
-  /* background-color: black; */
-  font-size: 150px;
-}
-
-.left-side__diamond h4 {
-  position: absolute;
-  margin: 0;
-  z-index: 1;
-  color: #ffffff;
-  text-shadow: 1px 1px 1px #3C4858;
-  font-size: 25px;
-}
-
-.left-side__diamond img {
-  position: absolute;
-  z-index: 1;
-  width: 25px;
-  
-}
-
-.left-side__diamond img:hover {
-  transform: scale(1.2);
-}
-
-.top-left-triangle img {
-  top: 17rem;
-  left: 22%;
-}
-
-.top-left-triangle h4 {
-  top: 17rem;
-  left: 8%;
-}
-
-.top-center-triangle img {
-  top: 15rem;
-  left: 26.5%;
-}
-
-.top-center-triangle h4 {
-  top: 8rem;
-  left: 23.5%;
-}
-
-.top-right-triangle img {
-  top: 17rem;
-  left: 31%;
-}
-
-.top-right-triangle h4 {
-  top: 17rem;
-  left: 39%;
-}
-
-.bottom-left-triangle img {
-  top: 21rem;
-  left: 23.5%;
-}
-
-.bottom-left-triangle h4 {
-  top: 21rem;
-  left: 10%;
-}
-
-.bottom-right-triangle img {
-  top: 21rem;
-  left: 29.5%;
-}
-
-.bottom-right-triangle h4 {
-  top: 21rem;
-  left: 38%;
-}
-
-.right-side__project-gem {
-  width: 4rem;
-}
-
-.project-gem__diamond {
-  width: 100%;
-  cursor: pointer;
-}
-
-.top-triangles {
-  display: flex;
-}
-
-.bottom-triangles {
-  display: flex;
-}
-
-.top-left-triangle {
-  /* width: 0;
-  height: 0; */
-  border-right: 1em solid transparent;
-  border-left: 1em  solid transparent;
-  border-bottom: 1.33em solid transparent;
-}
-
-.top-center-triangle{
-  margin-left: -1em;
-  /* width: 0;
-  height: 0; */
-  border-right: 1em solid transparent;
-  border-left: 1em solid transparent;
-  border-top: 1.33em solid transparent;
-}
-
-.top-right-triangle {
-  margin-left: -1em;
-  /* width: 0;
-  height: 0; */
-  border-right: 1em solid transparent;
-  border-left: 1em solid transparent;
-  border-bottom: 1.33em solid transparent;
-}
-
-.bottom-left-triangle {
-  /* width: 0;
-  height: 0; */
-  border-left: 2em solid transparent;
-  border-top: 2.23em solid transparent;
-}
-
-.bottom-right-triangle {
-  /* width: 0;
-  height: 0; */
-  border-right: 2em solid transparent;
-  border-top: 2.23em solid transparent;
 }
