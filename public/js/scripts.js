@@ -77,18 +77,20 @@ function createProject(name, id) {
   const dropdownItem = `<li data-id="${id}">${name}</li>`;
 
   $('.right-side__projects').prepend(project); 
-  $('.gem-form__dropdown-content').prepend(dropdownItem)
+  $('.gem-form__dropdown-content').prepend(dropdownItem);
 }
 
 function displayProjectDropdown(event) {
   event.preventDefault();
   $('.gem-form__dropdown-content').toggleClass('show');
+  $('.gem-form__dropbtn').toggleClass('up-arrow');
 }
 
 function selectProject() {
   $('.gem-form__dropbtn').text($(this).text());
   $('.gem-form__dropbtn').attr('data-id', $(this).attr('data-id'));
   $('.gem-form__dropdown-content').toggleClass('show');
+  $('.gem-form__dropbtn').toggleClass('up-arrow');
 }
 
 function submitGemPalette(event) {

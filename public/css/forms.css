@@ -71,3 +71,9 @@
 .show {
   display: block;
 }
+
+.up-arrow {
+  background: url(../assets/up-arrow.svg) no-repeat 92% center;
+  background-color: #23ADF0;
+  background-size: 1rem;
+}
