@@ -1,6 +1,8 @@
 # Palette Picker
 
-[Project](http://frontend.turing.io/projects/palette-picker.html) that allows users to generate color palettes and save them for future use.
+[Project](http://frontend.turing.io/projects/palette-picker.html) that allows users to generate color palettes and save them for future use. Backend built using Express, knex, and PostgreSQL. Frontend built using vanilla jQuery.
+
+Launch Application --> [Here](https://palette-picker-laura-whitaker.herokuapp.com/)
 
 ## Wireframe
 ![wireframe](images/wireframe.png)
