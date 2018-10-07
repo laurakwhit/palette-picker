@@ -1,10 +1,16 @@
 
 function submitProject(event) {
   event.preventDefault();
-  const name = $(this).find('input').val();
+  const name = $(this).find('input').val().toUpperCase();
 
   if (!name) {
     return alert('Please enter a project name.');
+  }
+
+  for (i = 1; i <= $('.right-side__project').find('h2').length; i++) {
+    if (name === $(`#${i}`).find('h2').text()) {
+      return alert('A project with that name already exists, please choose another name.')
+    }
   }
   saveProject(name);
   $(this).find('input').val('');
