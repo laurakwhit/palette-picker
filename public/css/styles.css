@@ -63,3 +63,51 @@ input {
 .right-side h2 {
   font-weight: 600;
 }
+
+@media only screen and (max-width: 1125px) { 
+  main {
+    flex-direction: column;
+  }
+
+  .left-side {
+    width: 100%;
+  }
+
+  .right-side {
+    width: 100%;
+  }
+}
+
+@media only screen and (max-width: 690px) { 
+  header {
+    height: 4rem;
+  }
+
+  header h1 {
+    font-size: 4rem;
+  }
+
+  .left-side {
+    height: 525px;
+  }
+}
+
+@media only screen and (max-width: 530px) { 
+  .left-side {
+    height: 425px;
+  }
+}
+
+@media only screen and (max-width: 460px) { 
+  header {
+    height: 2rem;
+  }
+
+  header h1 {
+    font-size: 2rem;
+  }
+
+  .left-side {
+    height: 325px;
+  }
+}

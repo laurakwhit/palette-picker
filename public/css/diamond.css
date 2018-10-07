@@ -8,12 +8,14 @@
 }
 
 .top-left-triangle {
+  position: relative;
   border-left: 1em solid transparent;
   border-right: 1em solid transparent;
   border-bottom: 1.33em solid transparent;
 }
 
 .top-center-triangle {
+  position: relative;
   margin-left: -1em;
   border-left: 1em solid transparent;
   border-right: 1em solid transparent;
@@ -21,6 +23,7 @@
 }
 
 .top-right-triangle {
+  position: relative;
   margin-left: -1em;
   border-left: 1em solid transparent;
   border-right: 1em solid transparent;
@@ -28,11 +31,13 @@
 }
 
 .bottom-left-triangle {
+  position: relative;
   border-left: 2em solid transparent;
   border-top: 2.23em solid transparent;
 }
 
 .bottom-right-triangle {
+  position: relative;
   border-right: 2em solid transparent;
   border-top: 2.23em solid transparent;
 }
@@ -68,53 +73,53 @@
 }
 
 .top-left-triangle img {
-  top: 17rem;
-  left: 22%;
+  top: 10rem;
+  left: 4rem;
 }
 
 .top-left-triangle h4 {
-  top: 17rem;
-  left: 8%;
+  top: 10rem;
+  left: -6rem;
 }
 
 .top-center-triangle img {
-  top: 15rem;
-  left: 26.5%;
+  top: -5rem;
+  left: -.5rem;
 }
 
 .top-center-triangle h4 {
-  top: 8rem;
-  left: 23.5%;
+  top: -11rem;
+  left: -3rem;
 }
 
 .top-right-triangle img {
-  top: 17rem;
-  left: 31%;
+  top: 10rem;
+  left: -5.5rem;
 }
 
 .top-right-triangle h4 {
-  top: 17rem;
-  left: 39%;
+  top: 10rem;
+  left: -1rem;
 }
 
 .bottom-left-triangle img {
-  top: 21rem;
-  left: 23.5%;
+  top: -19rem;
+  left: -3.5rem;
 }
 
 .bottom-left-triangle h4 {
-  top: 21rem;
-  left: 10%;
+  top: -19rem;
+  left: -14rem;
 }
 
 .bottom-right-triangle img {
-  top: 21rem;
-  left: 29.5%;
+  top: -19rem;
+  left: 2rem;
 }
 
 .bottom-right-triangle h4 {
-  top: 21rem;
-  left: 38%;
+  top: -19rem;
+  left: 7rem;
 }
 
 /* Smaller Palette Diamond */
@@ -125,4 +130,22 @@
 .project-gem__diamond {
   width: 100%;
   cursor: pointer;
+}
+
+@media only screen and (max-width: 690px) { 
+  .left-side__diamond {
+    font-size: 125px;
+  }
+}
+
+@media only screen and (max-width: 530px) { 
+  .left-side__diamond {
+    font-size: 100px;
+  }
+}
+
+@media only screen and (max-width: 460px) { 
+  .left-side__diamond {
+    font-size: 75px;
+  }
 }
