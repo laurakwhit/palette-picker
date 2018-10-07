@@ -48,7 +48,10 @@ function lockColor() {
 
 function submitProject(event) {
   event.preventDefault();
-  const name = $(this).find('input').val().toUpperCase();
+  const name = $(this).find('input').val();
+  if (!name) {
+    return alert('Please enter a project name.');
+  }
   saveProject(name);
   $(this).find('input').val('');
 }
