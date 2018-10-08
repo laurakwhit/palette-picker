@@ -3,19 +3,19 @@ const configuration = require('./knexfile')[environment];
 const database = require('knex')(configuration);
 const express = require('express');
 const app = express();
-const bodyParser = require('body-parser')
+const bodyParser = require('body-parser');
 
 app.set('port', process.env.PORT || 3000);
-app.use(bodyParser.json())
+app.use(bodyParser.json());
 app.use(express.static('public'));
 
 app.get('/api/v1/projects', (request, response) => {
   database('projects').select()
     .then((projects) => {
-      response.status(200).json(projects);
+      response.status(200).json(projects)
     })
     .catch((error) => {
-      response.status(500).json({ error });
+      response.status(500).json({ error })
     });
 });
 
@@ -25,7 +25,7 @@ app.get('/api/v1/palettes/:project_id', (request, response) => {
   database('palettes').where('project_id', project_id).select()
     .then(palettes => {
       if (palettes.length) {
-        response.status(200).json(palettes);
+        response.status(200).json(palettes)
       } else {
         response.status(404).json({ 
           error: `Could not find palettes for a project with id ${project_id}`
@@ -43,7 +43,7 @@ app.get('/api/v1/palette/:palette_id', (request, response) => {
   database('palettes').where('id', palette_id).select()
     .then(palette => {
       if (palette.length) {
-        response.status(200).json(palette[0]);
+        response.status(200).json(palette[0])
       } else {
         response.status(404).json({ 
           error: `Could not find a palette with id ${palette_id}`
@@ -71,7 +71,7 @@ app.post('/api/v1/projects', (request, response) => {
       response.status(201).json({ id: project[0] })
     })
     .catch(error => {
-      response.status(500).json({ error });
+      response.status(500).json({ error })
     });
 });
 
@@ -95,7 +95,7 @@ app.post('/api/v1/projects/:project_id/palettes', (request, response) => {
             return response.status(201).json({ id: palette[0] })
           })
           .catch(error => {
-            return response.status(500).json({ error });
+            return response.status(500).json({ error })
           });
       } else {
         return response.status(404).json({ 
@@ -104,7 +104,7 @@ app.post('/api/v1/projects/:project_id/palettes', (request, response) => {
       }
     })
     .catch(error => {
-      return response.status(500).json({ error });
+      return response.status(500).json({ error })
     });
 });
 
@@ -121,5 +121,5 @@ app.delete('/api/v1/palettes/:palette_id', (request, response) => {
 });
 
 app.listen(app.get('port'), () => {
-  console.log(`App is running on ${app.get('port')}.`);
+  console.log(`App is running on ${app.get('port')}.`)
 });
