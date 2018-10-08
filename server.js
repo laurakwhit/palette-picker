@@ -121,5 +121,5 @@ app.delete('/api/v1/palettes/:palette_id', (request, response) => {
 });
 
 app.listen(app.get('port'), () => { // app listens on port (which is set on line 8) for connections and returns an http.Server object
-  console.log(`App is running on ${app.get('port')}.`);
+  console.log(`App is running on ${app.get('port')}.`)
 });
