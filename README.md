@@ -8,4 +8,4 @@ Launch Application --> [Here](https://palette-picker-laura-whitaker.herokuapp.co
 ![wireframe](images/wireframe.png)
 
 ## Result
-![layout](images/layout.gif)
+[![layout](images/layout.gif)](https://palette-picker-laura-whitaker.herokuapp.com/)
